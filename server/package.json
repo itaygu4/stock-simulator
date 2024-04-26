@@ -1,0 +1,20 @@
+{
+  "name": "stock-simulator-server",
+  "version": "1.0.0",
+  "main": "index.ts",
+  "type": "module",
+  "dependencies": {
+    "fastify": "^4.26.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.4.4",
+    "typescript": "^5.4.5"
+  },
+  "scripts": {
+    "start": "npm run build && npde dist/app.js",
+    "build": "tsc",
+    "watch": "tsc -w",
+    "dev": "npm run build:ts && concurrently -k -p \"[{name}]\" -n \"TypeScript,App\" -c \"yellow.bold,cyan.bold\" \"npm:watch:ts\" \"npm:dev:start\"",
+    "dev:start": "fastify start --ignore-watch=.ts$ -w -l info -P dist/app.js"
+  }
+}

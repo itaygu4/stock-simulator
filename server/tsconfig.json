@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "outDir": "dist",
+    "target": "ES2017",
+    "module": "ES2015",
+    "strict": true,
+    "removeComments": true,
+    "forceConsistentCasingInFileNames": true,
+    "sourceMap": true
+  },
+  "include": ["./*.ts", "./**/*.ts"]
+}
